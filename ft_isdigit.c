@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nghoang <nghoang@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 16:09:41 by nghoang           #+#    #+#             */
-/*   Updated: 2022/10/25 00:18:53 by nghoang          ###   ########.fr       */
+/*   Created: 2022/10/24 23:13:29 by nghoang           #+#    #+#             */
+/*   Updated: 2022/10/25 00:19:23 by nghoang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int a)
+int	ft_isdigit(int c)
 {
-	if (((a >= 'A') && (a <= 'Z')) || ((a >= 'a') && (a <= 'z')))
+	if (c > 47 && c < 58)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
