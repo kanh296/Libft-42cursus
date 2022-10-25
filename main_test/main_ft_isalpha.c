@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "libft.h"
+
 int	ft_isalpha(int a);
 
 int	main()
