@@ -9,4 +9,4 @@ int	main()
 	return (0);
 }
 
-// Checked: null, \0,
+// Checked: null, \0, original
