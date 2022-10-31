@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nghoang <nghoang@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:34:13 by nghoang           #+#    #+#             */
-/*   Updated: 2022/10/25 15:17:17 by nghoang          ###   ########.fr       */
+/*   Updated: 2022/10/31 22:52:46 by nghoang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memset(void *b, int c, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (b == NULL)
-		return (NULL);
 	while (i < len)
 	{
 		((char *)b)[i] = (unsigned char)c;
