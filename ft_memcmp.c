@@ -6,7 +6,7 @@
 /*   By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:46:55 by nghoang           #+#    #+#             */
-/*   Updated: 2022/10/31 17:42:15 by nghoang          ###   ########.fr       */
+/*   Updated: 2022/11/01 16:44:32 by nghoang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t				i;
 	const unsigned char	*t1;
 	const unsigned char	*t2;
 

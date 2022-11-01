@@ -6,7 +6,7 @@
 /*   By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:04:24 by nghoang           #+#    #+#             */
-/*   Updated: 2022/10/31 16:08:28 by nghoang          ###   ########.fr       */
+/*   Updated: 2022/11/01 14:05:47 by nghoang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,9 @@ int	ft_atoi(const char *str)
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
+	/*if ((res * neg) < -2147483648)
+		return (0);
+	if ((res * neg) > 2147483647)
+		return (-1);*/
 	return ((int)(res * neg));
 }
