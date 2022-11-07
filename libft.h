@@ -6,7 +6,7 @@
 /*   By: nghoang <nghoang@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:15:48 by nghoang           #+#    #+#             */
-/*   Updated: 2022/11/07 15:42:04 by nghoang          ###   ########.fr       */
+/*   Updated: 2022/11/08 01:00:39 by nghoang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ char	*ft_itoa(int n);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
 
 #endif
