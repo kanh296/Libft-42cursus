@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nghoang <nghoang@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:01:37 by nghoang           #+#    #+#             */
-/*   Updated: 2022/11/04 03:32:16 by nghoang          ###   ########.fr       */
+/*   Updated: 2022/11/08 14:57:53 by nghoang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ret = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 	if (!ret)
 		return (NULL);
-	//ft_strlcat(ret, s1, len_s1 + 1);
-	//ft_strlcat(ret, s2, len_s2 + 1);
 	ft_memmove(ret, s1, len_s1);
 	ft_memmove(ret + len_s1, s2, len_s2);
 	ret[len_s1 + len_s2] = '\0';
