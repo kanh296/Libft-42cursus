@@ -6,7 +6,7 @@
 /*   By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 10:50:20 by nghoang           #+#    #+#             */
-/*   Updated: 2022/10/26 11:57:30 by nghoang          ###   ########.fr       */
+/*   Updated: 2022/11/09 17:58:49 by nghoang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		return (0);
 	if (dstsize == 0)
 		return (src_len);
-	while (i < dstsize && src[i] != '\0')
+	while (i + 1 < dstsize && src[i])
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	if (dstsize < src_len)
-		dst[dstsize - 1] = '\0';
-	else
+	if (dstsize != 0)
 		dst[i] = '\0';
 	return (src_len);
 }

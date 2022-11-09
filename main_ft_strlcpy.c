@@ -1,8 +1,9 @@
 #include "libft.h"
+#include <string.h>
 
 int	main()
 {
-	char	s[] = "aaaaa";
+	/*char	s[] = "aaaaa";
 	char	d[] = "bbbbbbbbbbbb";
 	char	d1[] = "bbbbbbbbbbbb";
 	char	d2[] = "ccc";
@@ -10,9 +11,9 @@ int	main()
 	char	d4[] = "ddddddddddd";
 	char	d5[] = "";
 	char	d6[] = "";
-	/*printf("d before: %s\n", d);
+	printf("d before: %s\n", d);
 	printf("d1 before: %s\n", d1);
-	printf("d2 before: %s\n", d2);*/
+	printf("d2 before: %s\n", d2);//
 
 	ft_strlcpy(d, s, 3);
 	strlcpy(d1, s, 3);
@@ -28,5 +29,18 @@ int	main()
 	printf("dstsize 0 check: %s\n", d4);
 	printf("dstlen = 0 check: %s\n", d5);
 	printf("dstlen = 0 check: %s\n", d6);
+	return (0);*/
+
+	// check(ft_strlcpy(dest, src, 6) == strlen(src) && !memcmp(src, dest, 5) && dest[5] == 0); showLeaks(); memset(dest, 'A', 10);
+	char src[] = "coucou";
+	char dest[10]; 
+	memset(dest, 'A', 10);
+
+	printf("strlen(src) = %lu\n", strlen(src));
+	printf("ft_strlcpy(dest, src, 6) = %zu\n", ft_strlcpy(dest, src, 6));
+	printf("memcmp(src,dest, 5): %d\n", memcmp(src,dest, 5));
+	printf("char dest[5]: %c\n", dest[5]);
+	system("leaks private-libft > leaks.txt");
+
 	return (0);
 }

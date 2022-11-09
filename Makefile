@@ -6,7 +6,7 @@
 #    By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 05:04:38 by nghoang           #+#    #+#              #
-#    Updated: 2022/10/31 17:06:32 by nghoang          ###   ########.fr        #
+#    Updated: 2022/11/09 17:41:34 by nghoang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 FLAGS = gcc -Wall -Wextra -Werror
 
-SOURCES = *.c
+SOURCES = *.c #TODO: remove wildcards
 
 OBJECTS = *.o
 

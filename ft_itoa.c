@@ -6,7 +6,7 @@
 /*   By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:36:37 by nghoang           #+#    #+#             */
-/*   Updated: 2022/11/04 17:37:26 by nghoang          ###   ########.fr       */
+/*   Updated: 2022/11/09 18:44:42 by nghoang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ char	*ft_itoa(int n)
 	char	*s;
 
 	len = ft_size_neg(n);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	s = malloc((sizeof(char)) * (len + 1));
 	if (!s)
 		return (NULL);
 	if (n == 0)
 		s[0] = '0';
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		s[0] = '-';
