@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+         #
+#    By: nghoang <nghoang@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 05:04:38 by nghoang           #+#    #+#              #
-#    Updated: 2022/11/09 17:41:34 by nghoang          ###   ########.fr        #
+#    Updated: 2022/11/10 17:37:28 by nghoang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,23 @@ NAME = libft.a
 
 FLAGS = gcc -Wall -Wextra -Werror
 
-SOURCES = *.c #TODO: remove wildcards
+SOURCES = ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
+			ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
+			ft_itoa.c ft_memcpy.c ft_putendl_fd.c ft_strchr.c ft_strlcpy.c \
+			ft_strnstr.c ft_tolower.c ft_bzero.c ft_isascii.c ft_strrchr.c\
+			ft_memmove.c ft_putnbr_fd.c ft_strdup.c ft_strlen.c ft_striteri.c \
+			ft_toupper.c ft_calloc.c ft_isdigit.c ft_memchr.c ft_memset.c \
+			ft_putstr_fd.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_substr.c
 
-OBJECTS = *.o
+BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+					ft_lstmap.c ft_lstnew.c ft_lstsize.c
 
-HEADER = *.h
+OBJECTS = $(SOURCES:.c=.o)
+
+BONUS_OBJECTS = $(BONUS:.c=.o)
+
+HEADER = libft.h
 
 all: $(NAME)
 
@@ -28,11 +40,16 @@ $(NAME):
 		ranlib $(NAME)
 
 clean:
-		@rm -f $(OBJECTS)
+		@rm -f $(OBJECTS) $(BONUS_OBJECTS)
 
 fclean: clean
 		@rm -f $(NAME)
 
-re: fclean all
+re: fclean $(NAME)
 
-.PHONY: all, clean, fclean, re
+bonus:
+		$(FLAGS) -c $(BONUS) -I $(HEADER)
+		ar rc $(NAME) $(BONUS_OBJECTS)
+		ranlib $(NAME)
+
+.PHONY: all, clean, fclean, re, bonus
