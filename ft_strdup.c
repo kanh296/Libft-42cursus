@@ -6,7 +6,7 @@
 /*   By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:16:52 by nghoang           #+#    #+#             */
-/*   Updated: 2022/11/11 10:25:46 by nghoang          ###   ########.fr       */
+/*   Updated: 2022/11/11 14:28:25 by nghoang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s)
 
 	len = ft_strlen(s) + 1;
 	res = malloc(sizeof(char) * len);
-	if (res == NULL)
+	if (!res)
 		return (NULL);
 	else
 		ft_memcpy(res, s, len);

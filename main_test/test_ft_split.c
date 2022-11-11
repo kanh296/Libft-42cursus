@@ -63,7 +63,7 @@ char	**ft_split(char const *s, char c)
 	return (s2);
 }
 
-/*int	main()
+int	main()
 {
 	char s1[] = "an array of strings obtained by splitting s using the character c as a delimiter.";
 	char s2[] = "an array of strings obtained by splitting s using the character c as a delimiter.";
@@ -71,10 +71,10 @@ char	**ft_split(char const *s, char c)
 	char	**ret1;
 	char	**ret2;
 
-	ret1 = ft_split(s1, ' ');
-	ret2 = ft_split(s2, ' ');
+	ret1 = ft_split(s1, '\0');
+	ret2 = ft_split(s2, '\0');
 	printf("s1 split result: %s\n", *ret1);
 	printf("s2 split result: %s\n", *ret2);
 	printf("strcmp re1 vs ret2: %d\n", strcmp(*ret1, *ret2));
 	return (0);
-}*/
+}
