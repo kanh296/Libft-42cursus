@@ -6,7 +6,7 @@
 /*   By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:58:03 by nghoang           #+#    #+#             */
-/*   Updated: 2022/11/11 12:40:23 by nghoang          ###   ########.fr       */
+/*   Updated: 2022/11/15 16:06:42 by nghoang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ static char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 			i++;
 			word_len++;
 		}
-		s2[word] = (char *)malloc(sizeof(char) * (word_len + 1));
-		if (!s2)
-			return (0);
+		s2[word] = malloc(sizeof(char) * (word_len + 1));
+		if (!s2[word])
+			return (NULL);
 		ft_putword(s2[word], s, i, word_len);
 		word_len = 0;
 		word++;
@@ -87,7 +87,9 @@ char	**ft_split(char const *s, char c)
 	num_words = ft_count_words(s, c);
 	s2 = (char **)malloc(sizeof(char *) * (num_words + 1));
 	if (!s2)
-		return (0);
+		return (NULL);
 	ft_split_words(s, c, s2, num_words);
+	if (!s2)
+		return (NULL);
 	return (s2);
 }

@@ -6,7 +6,7 @@
 #    By: nghoang <nghoang@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 05:04:38 by nghoang           #+#    #+#              #
-#    Updated: 2022/11/11 15:24:14 by nghoang          ###   ########.fr        #
+#    Updated: 2022/11/15 15:51:09 by nghoang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,30 +26,35 @@ BONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 					ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
 					ft_lstnew_bonus.c ft_lstsize_bonus.c
 
-OBJECTS = $(SOURCES:.c=.o)
+OBJECTS = $(SOURCES:%.c=$(DIR_OBJ)%.o)
+
+DIR_OBJ  = ./objects/
+DIR_SRC = ./srcs/
 
 BONUS_OBJECTS = $(BONUS:.c=.o)
 
-HEADER = libft.h
+HEADER = -I ./includes/
 
 all: $(NAME)
 
-$(NAME):
-		$(FLAGS) -c $(SOURCES) -I $(HEADER)
-		ar rc $(NAME) $(OBJECTS)
-		ranlib $(NAME)
+$(NAME): $(OBJECTS)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
+
+$(DIR_OBJ)%.o:$(DIR_SRC)%.c
+	@mkdir -p ./objects
+	@$(FLAGS) -c $< -o $@ $(HEADER)
 
 clean:
-		@rm -f $(OBJECTS) $(BONUS_OBJECTS)
-
+	@rm -rf $(DIR_OBJ)
 fclean: clean
-		@rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean $(NAME)
 
 bonus:
-		$(FLAGS) -c $(BONUS) -I $(HEADER)
-		ar rc $(NAME) $(BONUS_OBJECTS)
-		ranlib $(NAME)
+	@$(FLAGS) -c $(BONUS) -I $(HEADER)
+	@ar rc $(NAME) $(BONUS_OBJECTS)
+	ranlib $(NAME)
 
 .PHONY: all, clean, fclean, re, bonus
